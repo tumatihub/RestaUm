@@ -181,14 +181,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4a9d19dfaeba04a8191cbcf2da5b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 2660049236472881395, guid: c48f53d49354a534bac49629f48a983b,
+  _weaponPrefab: {fileID: 2660049236472881395, guid: c48f53d49354a534bac49629f48a983b,
     type: 3}
-  placebleLayerMask:
+  _placebleLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  FloorLayerMask:
+  _floorLayerMask:
     serializedVersion: 2
     m_Bits: 512
+  _weaponLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!4 &137180173
 Transform:
   m_ObjectHideFlags: 0

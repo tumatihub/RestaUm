@@ -5,13 +5,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] GameObject weaponPrefab;
+    [SerializeField] GameObject _weaponPrefab;
 
-    GameObject weaponToPlace;
-    [SerializeField] LayerMask placebleLayerMask;
-    [SerializeField] LayerMask FloorLayerMask;
+    GameObject _weaponToPlace;
+    GameObject _selectedWeapon;
 
-    Vector3Int[] directions = { new Vector3Int(1, 0, 0), new Vector3Int(-1, 0, 0), new Vector3Int(0, 0, 1), new Vector3Int(0, 0, -1) };
+    [SerializeField] LayerMask _placebleLayerMask;
+    [SerializeField] LayerMask _floorLayerMask;
+    [SerializeField] LayerMask _weaponLayerMask;
+
+
+    Vector3Int[] _directions = { new Vector3Int(1, 0, 0), new Vector3Int(-1, 0, 0), new Vector3Int(0, 0, 1), new Vector3Int(0, 0, -1) };
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +24,20 @@ public class PlayerController : MonoBehaviour
 
     private void GrabNewWeapon()
     {
-        weaponToPlace = Instantiate(weaponPrefab);
+        _weaponToPlace = Instantiate(_weaponPrefab);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (weaponToPlace != null)
+        SelectWeapon();
+
+        if (_selectedWeapon != null && Input.GetKeyDown(KeyCode.Space))
+        {
+            _selectedWeapon.GetComponent<Weapon>().Shoot();
+        }
+
+        if (_weaponToPlace != null)
         {
             MoveWeaponToMouse();
         }
@@ -37,23 +48,39 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void SelectWeapon()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            print("Try to select");
+            Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit _hitInfo;
+
+            if (Physics.Raycast(_ray, out _hitInfo, Mathf.Infinity, _weaponLayerMask))
+            {
+                _selectedWeapon = _hitInfo.transform.gameObject;
+                print("Selected: " + _selectedWeapon.name);
+            }
+        }
+    }
+
     private void MoveWeaponToMouse()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hitInfo;
+        Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit _hitInfo;
 
-        if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, placebleLayerMask))
+        if (Physics.Raycast(_ray, out _hitInfo, Mathf.Infinity, _placebleLayerMask))
         {
-            weaponToPlace.transform.position = hitInfo.transform.position;
-            foreach(Vector3Int dir in directions)
+            _weaponToPlace.transform.position = _hitInfo.transform.position;
+            foreach(Vector3Int dir in _directions)
             {
-                if (Physics.Raycast(hitInfo.transform.position, dir, Mathf.Infinity, FloorLayerMask)){
-                    weaponToPlace.transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
+                if (Physics.Raycast(_hitInfo.transform.position, dir, Mathf.Infinity, _floorLayerMask)){
+                    _weaponToPlace.transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
                 }
             }
             if (Input.GetMouseButtonDown(0))
             {
-                PlaceWeapon(hitInfo);
+                PlaceWeapon(_hitInfo);
             }
         }
     }
@@ -61,9 +88,9 @@ public class PlayerController : MonoBehaviour
     private void PlaceWeapon(RaycastHit hitInfo)
     {
         TileFloor _floor = hitInfo.transform.gameObject.GetComponent<TileFloor>();
-        if (_floor.PlaceWeapon(weaponToPlace))
+        if (_floor.PlaceWeapon(_weaponToPlace))
         {
-            weaponToPlace = null;
+            _weaponToPlace = null;
         }
     }
 }
