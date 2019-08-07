@@ -87,7 +87,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3852343676566656489}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -103,6 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8701485888148714870}
   - component: {fileID: 4692296137925795340}
+  - component: {fileID: -5537908613493152104}
   m_Layer: 0
   m_Name: Cannon Bullet
   m_TagString: Untagged
@@ -141,3 +142,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-5537908613493152104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4948482855627109912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f163e592a5d46a64bace7e7b573e77c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
