@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[SelectionBase]
 public abstract class Enemy : MonoBehaviour
 {
     protected int _hitPoints;
@@ -15,6 +16,8 @@ public abstract class Enemy : MonoBehaviour
         _tileFloor = GetTileFloor();
         if (_tileFloor == null)
             Debug.LogError("Can´t find the tileFloor of the enemy " + name);
+        else
+            _tileFloor.enemy = this;
     }
 
     private TileFloor GetTileFloor()
@@ -52,8 +55,12 @@ public abstract class Enemy : MonoBehaviour
         RaycastHit _hitInfo;
         if (Physics.Raycast(_tileFloor.transform.position, impactDir, out _hitInfo, Mathf.Infinity, LayerMask.GetMask("Floor")))
         {
-            _tileFloor = _hitInfo.transform.gameObject.GetComponent<TileFloor>();
-            transform.position = _tileFloor.transform.position;
+            if (_hitInfo.transform.gameObject.GetComponent<TileFloor>().enemy == null)
+            {
+                _tileFloor.enemy = null;
+                _tileFloor = _hitInfo.transform.gameObject.GetComponent<TileFloor>();
+                transform.position = _tileFloor.transform.position;
+            }
         }
     }
 }

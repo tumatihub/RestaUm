@@ -14,6 +14,8 @@ public class TileFloor : MonoBehaviour
     GameObject _placedWeapon;
     bool _haveWeapon = false;
 
+    public Enemy enemy;
+
     public int GetGridSize()
     {
         return gridSize;
