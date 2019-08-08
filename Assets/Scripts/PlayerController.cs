@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
         if (_selectedWeapon != null && Input.GetKeyDown(KeyCode.Space))
         {
-            _selectedWeapon.GetComponent<Weapon>().Shoot();
+            _selectedWeapon.GetComponent<Weapon>().Execute();
         }
 
         if (_weaponToPlace != null)
