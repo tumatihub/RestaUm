@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] GameObject _weaponPrefab;
+    [SerializeField] GameObject _cannonPrefab;
+    [SerializeField] GameObject _piercingCannonPrefab;
 
     GameObject _weaponToPlace;
     GameObject _selectedWeapon;
@@ -22,10 +23,6 @@ public class PlayerController : MonoBehaviour
     {
     }
 
-    private void GrabNewWeapon()
-    {
-        _weaponToPlace = Instantiate(_weaponPrefab);
-    }
 
     // Update is called once per frame
     void Update()
@@ -41,10 +38,30 @@ public class PlayerController : MonoBehaviour
         {
             MoveWeaponToMouse();
         }
+        
+        GrabNewWeapon();
+    }
 
-        if (Input.GetMouseButtonDown(1))
+    private void GrabNewWeapon()
+    {
+        GameObject _prefab = null;
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            GrabNewWeapon();
+            _prefab = _cannonPrefab;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            _prefab = _piercingCannonPrefab;
+        }
+
+        if (_prefab != null)
+        {
+            if (_weaponToPlace != null)
+            {
+                Destroy(_weaponToPlace.gameObject);
+            }
+            _weaponToPlace = Instantiate(_prefab);
         }
     }
 

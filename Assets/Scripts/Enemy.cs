@@ -28,7 +28,7 @@ public abstract class Enemy : MonoBehaviour
         return null;
     }
 
-    public virtual void TakeDamage(int amount, Vector3 impactDir)
+    public virtual int TakeDamage(int amount, Vector3 impactDir)
     {
         _hitPoints -= amount;
         if (_hitPoints <= 0)
@@ -39,6 +39,7 @@ public abstract class Enemy : MonoBehaviour
         {
             PushBack(impactDir);
         }
+        return _hitPoints;
     }
 
     public virtual void Die()
