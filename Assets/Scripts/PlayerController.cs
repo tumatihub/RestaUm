@@ -18,9 +18,14 @@ public class PlayerController : MonoBehaviour
 
     Vector3Int[] _directions = { new Vector3Int(1, 0, 0), new Vector3Int(-1, 0, 0), new Vector3Int(0, 0, 1), new Vector3Int(0, 0, -1) };
 
+    LevelController _levelController;
+
     // Start is called before the first frame update
     void Start()
     {
+        _levelController = FindObjectOfType<LevelController>();
+        if (_levelController == null)
+            Debug.LogError("Need a LevelController object.");
     }
 
 
@@ -48,11 +53,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            _prefab = _cannonPrefab;
+            _prefab = _levelController.GetWeaponPrefab(0);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            _prefab = _piercingCannonPrefab;
+            _prefab = _levelController.GetWeaponPrefab(1);
         }
 
         if (_prefab != null)
