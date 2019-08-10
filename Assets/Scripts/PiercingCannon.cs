@@ -8,23 +8,12 @@ public class PiercingCannon : Weapon
     [SerializeField] GameObject _bulletPrefab;
     [SerializeField] GameObject _spawnBulletPoint;
     [SerializeField] float _bulletSpeed;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     public override void Shoot()
     {
         print("PiercingCannon Shooting!");
         var _bullet = Instantiate(_bulletPrefab, _spawnBulletPoint.transform.position, _spawnBulletPoint.transform.rotation);
         _bullet.GetComponent<Rigidbody>().velocity = _spawnBulletPoint.transform.forward * _bulletSpeed;
+        _bullet.GetComponent<PiercingCannonBullet>().parentWeapon = this;
     }
 }

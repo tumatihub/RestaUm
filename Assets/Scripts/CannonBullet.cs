@@ -5,6 +5,7 @@ using UnityEngine;
 public class CannonBullet : MonoBehaviour
 {
     private int _bulletDamage = 1;
+    public Cannon parentWeapon;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,5 +19,10 @@ public class CannonBullet : MonoBehaviour
             other.gameObject.GetComponentInParent<Enemy>().TakeDamage(_bulletDamage, gameObject.transform.forward);
             Destroy(gameObject);
         }
+    }
+
+    private void OnDisable()
+    {
+        parentWeapon.EndTurn();
     }
 }

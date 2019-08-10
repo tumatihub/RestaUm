@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8639251077977490636}
-  - component: {fileID: -8112844573387466551}
   - component: {fileID: 8535540111558379332}
+  - component: {fileID: 6799307567910434105}
   m_Layer: 10
   m_Name: PiercingCannon
   m_TagString: Untagged
@@ -34,22 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-8112844573387466551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2660049236472881395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0380b961fbf210e47bcfa99f1be745d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 4948482855627109912, guid: 1c7539c1225f9f84fa1033b84b8ce2cd,
-    type: 3}
-  _spawnBulletPoint: {fileID: 5759106939772880637}
-  _bulletSpeed: 20
 --- !u!65 &8535540111558379332
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63,6 +47,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.87, y: 7.42, z: 7.067751}
   m_Center: {x: 0, y: 9.3, z: 0.3688755}
+--- !u!114 &6799307567910434105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2660049236472881395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b372800c06ed4141821f97b03896493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 4948482855627109912, guid: 1c7539c1225f9f84fa1033b84b8ce2cd,
+    type: 3}
+  _spawnBulletPoint: {fileID: 5759106939772880637}
+  _bulletSpeed: 50
 --- !u!1 &5759106939772880637
 GameObject:
   m_ObjectHideFlags: 0

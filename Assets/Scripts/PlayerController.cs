@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class PlayerController : MonoBehaviour
     Vector3Int[] _directions = { new Vector3Int(1, 0, 0), new Vector3Int(-1, 0, 0), new Vector3Int(0, 0, 1), new Vector3Int(0, 0, -1) };
 
     LevelController _levelController;
+    Button _shootButton;
+    public bool isShooting = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,10 @@ public class PlayerController : MonoBehaviour
         _levelController = FindObjectOfType<LevelController>();
         if (_levelController == null)
             Debug.LogError("Need a LevelController object.");
+
+        _shootButton = GameObject.Find("ShootButton").GetComponent<Button>(); // TODO: Remove string
+        if (_shootButton == null)
+            Debug.LogError("Need a shootButton.");
     }
 
 
@@ -73,8 +80,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void LinkShootButtonToSelectedWeapon()
+    {
+        _shootButton.onClick.AddListener(() => _selectedWeapon.GetComponent<Weapon>().Execute());
+    }
+
     private void SelectWeapon()
     {
+        if (isShooting) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             print("Try to select");
@@ -85,6 +99,8 @@ public class PlayerController : MonoBehaviour
             {
                 _selectedWeapon = _hitInfo.transform.gameObject;
                 print("Selected: " + _selectedWeapon.name);
+                LinkShootButtonToSelectedWeapon();
+                _shootButton.interactable = true;
             }
         }
     }

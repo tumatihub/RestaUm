@@ -7,6 +7,7 @@ public class PiercingCannonBullet : MonoBehaviour
     private int _bulletDamage = 1;
     private int _piercedEnemies;
     private int _maxPiercedEnemies = 2;
+    public PiercingCannon parentWeapon;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,5 +33,10 @@ public class PiercingCannonBullet : MonoBehaviour
                 _piercedEnemies++;
             }
         }
+    }
+
+    private void OnDisable()
+    {
+        parentWeapon.EndTurn();
     }
 }
