@@ -2324,17 +2324,17 @@ PrefabInstance:
     - target: {fileID: 2795536545898412711, guid: 8779c4950e8f7bb4bb737c6b8595fd9d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30.864546
+      value: 40.64
       objectReference: {fileID: 0}
     - target: {fileID: 2795536545898412711, guid: 8779c4950e8f7bb4bb737c6b8595fd9d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 45.96484
+      value: 60.33
       objectReference: {fileID: 0}
     - target: {fileID: 2795536545898412711, guid: 8779c4950e8f7bb4bb737c6b8595fd9d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.101753
+      value: -31.64
       objectReference: {fileID: 0}
     - target: {fileID: 2795536545898412711, guid: 8779c4950e8f7bb4bb737c6b8595fd9d,
         type: 3}
@@ -2644,6 +2644,12 @@ PrefabInstance:
       propertyPath: _piercingCannonPrefab
       value: 
       objectReference: {fileID: 2660049236472881395, guid: eafd508a702d38f4f9accde2934966d2,
+        type: 3}
+    - target: {fileID: 6545189512285085714, guid: 022fe98453be889419f74f7bf2e51d2f,
+        type: 3}
+      propertyPath: _arrowPrefab
+      value: 
+      objectReference: {fileID: 2631286042376623119, guid: 2fcb47ec509344548b6dd11a69cef2d0,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 022fe98453be889419f74f7bf2e51d2f, type: 3}

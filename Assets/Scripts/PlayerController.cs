@@ -24,6 +24,10 @@ public class PlayerController : MonoBehaviour
     Button _shootButton;
     public bool isShooting = false;
 
+    [SerializeField]
+    GameObject _arrowPrefab;
+    GameObject _arrow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -101,8 +105,19 @@ public class PlayerController : MonoBehaviour
                 print("Selected: " + _selectedWeapon.name);
                 LinkShootButtonToSelectedWeapon();
                 _shootButton.interactable = true;
+                MoveArrowToSelectedWeapon();
             }
         }
+    }
+
+    private void MoveArrowToSelectedWeapon()
+    {
+        if (_arrow == null)
+        {
+            _arrow = Instantiate(_arrowPrefab, _selectedWeapon.transform.position, Quaternion.identity);
+        }
+
+        _arrow.transform.position = _selectedWeapon.transform.position;
     }
 
     private void MoveWeaponToMouse()
