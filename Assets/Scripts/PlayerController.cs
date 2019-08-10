@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject _piercingCannonPrefab;
 
     GameObject _weaponToPlace;
+    int _indexWeapon;
     GameObject _selectedWeapon;
 
     [SerializeField] LayerMask _placebleLayerMask;
@@ -54,10 +55,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             _prefab = _levelController.GetWeaponPrefab(0);
+            _indexWeapon = 0;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             _prefab = _levelController.GetWeaponPrefab(1);
+            _indexWeapon = 1;
         }
 
         if (_prefab != null)
@@ -112,6 +115,7 @@ public class PlayerController : MonoBehaviour
         TileFloor _floor = hitInfo.transform.gameObject.GetComponent<TileFloor>();
         if (_floor.PlaceWeapon(_weaponToPlace))
         {
+            _levelController.RemoveWeaponFromListByIndex(_indexWeapon);
             _weaponToPlace = null;
         }
     }

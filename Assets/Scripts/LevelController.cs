@@ -17,9 +17,16 @@ public class LevelController : MonoBehaviour
     {
         if (index < _listOfWeapons.Length && _listOfWeapons[index]._numOfWeapons > 0)
         {
-            _listOfWeapons[index]._numOfWeapons--;
             return _listOfWeapons[index]._weaponPrefab;
         }
         return null;
+    }
+
+    public void RemoveWeaponFromListByIndex(int index)
+    {
+        if (index < _listOfWeapons.Length && _listOfWeapons[index]._numOfWeapons > 0)
+        {
+            _listOfWeapons[index]._numOfWeapons--;
+        }
     }
 }
