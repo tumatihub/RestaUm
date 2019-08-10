@@ -2633,23 +2633,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6545189512285085714, guid: 022fe98453be889419f74f7bf2e51d2f,
-        type: 3}
-      propertyPath: _cannonPrefab
-      value: 
-      objectReference: {fileID: 2660049236472881395, guid: c48f53d49354a534bac49629f48a983b,
-        type: 3}
-    - target: {fileID: 6545189512285085714, guid: 022fe98453be889419f74f7bf2e51d2f,
-        type: 3}
-      propertyPath: _piercingCannonPrefab
-      value: 
-      objectReference: {fileID: 2660049236472881395, guid: eafd508a702d38f4f9accde2934966d2,
-        type: 3}
-    - target: {fileID: 6545189512285085714, guid: 022fe98453be889419f74f7bf2e51d2f,
-        type: 3}
-      propertyPath: _arrowPrefab
-      value: 
-      objectReference: {fileID: 2631286042376623119, guid: 2fcb47ec509344548b6dd11a69cef2d0,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 022fe98453be889419f74f7bf2e51d2f, type: 3}

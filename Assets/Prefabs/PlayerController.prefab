@@ -43,7 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4a9d19dfaeba04a8191cbcf2da5b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponPrefab: {fileID: 2660049236472881395, guid: eafd508a702d38f4f9accde2934966d2,
+  _cannonPrefab: {fileID: 2660049236472881395, guid: c48f53d49354a534bac49629f48a983b,
+    type: 3}
+  _piercingCannonPrefab: {fileID: 2660049236472881395, guid: eafd508a702d38f4f9accde2934966d2,
     type: 3}
   _placebleLayerMask:
     serializedVersion: 2
@@ -54,3 +56,6 @@ MonoBehaviour:
   _weaponLayerMask:
     serializedVersion: 2
     m_Bits: 1024
+  isShooting: 0
+  _arrowPrefab: {fileID: 2631286042376623119, guid: 2fcb47ec509344548b6dd11a69cef2d0,
+    type: 3}
