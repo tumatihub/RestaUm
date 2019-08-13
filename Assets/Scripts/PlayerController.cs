@@ -55,24 +55,13 @@ public class PlayerController : MonoBehaviour
         {
             MoveWeaponToMouse();
         }
-        
-        GrabNewWeapon();
     }
 
-    private void GrabNewWeapon()
+    public void GrabNewWeapon(int index)
     {
-        GameObject _prefab = null;
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            _prefab = _levelController.GetWeaponPrefab(0);
-            _indexWeapon = 0;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            _prefab = _levelController.GetWeaponPrefab(1);
-            _indexWeapon = 1;
-        }
+        print("GrabWeapon: " + index);
+        GameObject _prefab = _levelController.GetWeaponPrefab(index);
+        _indexWeapon = index;
 
         if (_prefab != null)
         {
