@@ -43,3 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838332478c6fec044966608e849b4c57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _listOfWeapons: []
+  _weaponUIPrefab: {fileID: 5291113893178122404, guid: ea34fa7c5d31f5841b418b4e78c60e3a,
+    type: 3}
+  _winPanelPrefab: {fileID: 3671351254603193050, guid: ea9b63bbe49f10b4ba6edd7a5b5595f1,
+    type: 3}
+  _defeatPanelPrefab: {fileID: 0}

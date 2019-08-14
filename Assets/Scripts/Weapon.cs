@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class Weapon: MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
     protected bool _isActive = true;
+    public bool IsActive { get { return _isActive; } }
+
     Button _shootButton;
     PlayerController _player;
 

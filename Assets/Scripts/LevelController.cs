@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
@@ -14,17 +15,88 @@ public class LevelController : MonoBehaviour
         [HideInInspector] public GameObject weaponUI;
     }
 
+
     [SerializeField] WeaponAvailable[] _listOfWeapons;
     [SerializeField] GameObject _weaponUIPrefab;
     LayoutGroup _weaponPanel;
 
+    [SerializeField] GameObject _winPanelPrefab;
+    [SerializeField] GameObject _defeatPanelPrefab;
+
+    GameObject _mainCanvas;
+
     PlayerController _player;
+
+    IEnumerator _checkVictoryOrDefeatCoroutine;
 
     private void Start()
     {
         _weaponPanel = GameObject.Find("WeaponPanel").GetComponent<VerticalLayoutGroup>();
         _player = FindObjectOfType<PlayerController>();
-        GenerateWeaponsPanel();    
+        _mainCanvas = GameObject.Find("Canvas");
+        GenerateWeaponsPanel();
+        _checkVictoryOrDefeatCoroutine = CheckVictoryOrDefeat();
+        StartCoroutine(_checkVictoryOrDefeatCoroutine);
+    }
+
+    IEnumerator CheckVictoryOrDefeat()
+    {
+        while (true)
+        {
+            if (!_player.isShooting && !IsThereWeaponActive())
+            {
+                if (FindObjectsOfType<Enemy>().Length == 0)
+                {
+                    Victory();
+                }
+                else
+                {
+                    if (!IsThereWeaponAvailable())
+                    {
+                        Defeat();
+                    }
+                }
+            }
+            yield return new WaitForSeconds(1f);
+        }
+    }
+    private bool IsThereWeaponActive()
+    {
+        var _wpns = FindObjectsOfType<Weapon>();
+        foreach(var _wpn in _wpns)
+        {
+            if (_wpn.IsActive)
+                return true;
+        }
+        return false;
+    }
+
+    private void Defeat()
+    {
+        StopCoroutine(_checkVictoryOrDefeatCoroutine);
+        Instantiate(_defeatPanelPrefab, _mainCanvas.transform);
+    }
+
+    private bool IsThereWeaponAvailable()
+    {
+        foreach(var _wpn in _listOfWeapons)
+        {
+            if (_wpn.numOfWeapons > 0)
+                return true;
+        }
+        return false;
+    }
+
+    public void Victory()
+    {
+        StopCoroutine(_checkVictoryOrDefeatCoroutine);
+        Instantiate(_winPanelPrefab, _mainCanvas.transform);
+    }
+
+    public void NextMap()
+    {
+        var _currentMapIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(_currentMapIndex + 1);
     }
 
     public GameObject GetWeaponPrefab(int index)
