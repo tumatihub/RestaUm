@@ -99,6 +99,16 @@ public class LevelController : MonoBehaviour
         SceneManager.LoadScene(_currentMapIndex + 1);
     }
 
+    public void RestartMap()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public GameObject GetWeaponPrefab(int index)
     {
         if (index < _listOfWeapons.Length && _listOfWeapons[index].numOfWeapons > 0)
