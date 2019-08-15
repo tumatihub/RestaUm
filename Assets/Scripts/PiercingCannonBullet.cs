@@ -11,7 +11,7 @@ public class PiercingCannonBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Edge"))
+        if (other.gameObject.CompareTag("Edge") || other.gameObject.CompareTag("Ally"))
         {
             Destroy(gameObject);
         }

@@ -9,16 +9,11 @@ public class CannonBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Edge"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
-        }
-        else if (other.gameObject.CompareTag("Enemy"))
-        {
-            print("Colliding with: " + other.gameObject.name);
             other.gameObject.GetComponentInParent<Enemy>().TakeDamage(_bulletDamage, gameObject.transform.forward);
-            Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 
     private void OnDisable()

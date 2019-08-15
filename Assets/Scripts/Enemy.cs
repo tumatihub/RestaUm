@@ -55,7 +55,8 @@ public abstract class Enemy : MonoBehaviour
         RaycastHit _hitInfo;
         if (Physics.Raycast(_tileFloor.transform.position, impactDir, out _hitInfo, Mathf.Infinity, LayerMask.GetMask("Floor")))
         {
-            if (_hitInfo.transform.gameObject.GetComponent<TileFloor>().enemy == null)
+            var _hitFloor = _hitInfo.transform.gameObject.GetComponent<TileFloor>();
+            if (_hitFloor.enemy == null && _hitFloor.ally == null)
             {
                 _tileFloor.enemy = null;
                 _tileFloor = _hitInfo.transform.gameObject.GetComponent<TileFloor>();

@@ -71,7 +71,7 @@ public class LevelController : MonoBehaviour
         return false;
     }
 
-    private void Defeat()
+    public void Defeat()
     {
         StopCoroutine(_checkVictoryOrDefeatCoroutine);
         Instantiate(_defeatPanelPrefab, _mainCanvas.transform);

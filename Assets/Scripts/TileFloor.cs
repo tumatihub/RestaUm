@@ -15,6 +15,7 @@ public class TileFloor : MonoBehaviour
     bool _haveWeapon = false;
 
     public Enemy enemy;
+    public AllyScript ally;
 
     public int GetGridSize()
     {

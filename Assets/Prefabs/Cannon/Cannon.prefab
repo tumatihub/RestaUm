@@ -49,7 +49,7 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 4948482855627109912, guid: 05390563e9e308145b2e3e89f10f1698,
     type: 3}
   _spawnBulletPoint: {fileID: 5759106939772880637}
-  _bulletSpeed: 20
+  _bulletSpeed: 40
 --- !u!65 &8535540111558379332
 BoxCollider:
   m_ObjectHideFlags: 0
