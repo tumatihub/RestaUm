@@ -127,6 +127,12 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    public void ReturnWeaponByIndex(int index)
+    {
+        _listOfWeapons[index].numOfWeapons++;
+        UpdateWeaponQty(index);
+    }
+
     private void UpdateWeaponQty(int index)
     {
         var _weaponUI = _listOfWeapons[index].weaponUI;

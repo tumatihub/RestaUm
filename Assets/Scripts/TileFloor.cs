@@ -40,4 +40,10 @@ public class TileFloor : MonoBehaviour
         }
         return false;
     }
+
+    public void RemoveWeapon()
+    {
+        _haveWeapon = false;
+        _placedWeapon = null;
+    }
 }

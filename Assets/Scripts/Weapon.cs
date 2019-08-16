@@ -11,6 +11,7 @@ public abstract class Weapon : MonoBehaviour
 
     Button _shootButton;
     PlayerController _player;
+    TileFloor _floor;
 
     private void Start()
     {
@@ -21,6 +22,17 @@ public abstract class Weapon : MonoBehaviour
         _player = FindObjectOfType<PlayerController>();
         if (_player == null)
             Debug.LogError("Couldn´t find the playerController!");
+    }
+
+    public void SetFloor(TileFloor floor)
+    {
+        _floor = floor;
+    }
+
+    public void RemoveFloor()
+    {
+        _floor.RemoveWeapon();
+        _floor = null;
     }
 
     public void Execute()

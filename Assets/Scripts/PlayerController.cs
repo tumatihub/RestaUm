@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     LevelController _levelController;
     Button _shootButton;
     public bool isShooting = false;
+    Button _removeButton;
 
     [SerializeField]
     GameObject _arrowPrefab;
@@ -38,6 +39,11 @@ public class PlayerController : MonoBehaviour
         _shootButton = GameObject.Find("ShootButton").GetComponent<Button>(); // TODO: Remove string
         if (_shootButton == null)
             Debug.LogError("Need a shootButton.");
+
+        _removeButton = GameObject.Find("RemoveButton").GetComponent<Button>(); // TODO: Remove string
+        if (_removeButton == null)
+            Debug.LogError("Need a removeButton.");
+        _removeButton.onClick.AddListener(() => RemoveSelectedWeapon());
     }
 
 
@@ -73,6 +79,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void RemoveSelectedWeapon()
+    {
+        if (_selectedWeapon != null && _selectedWeapon.GetComponent<Weapon>().IsActive)
+        {
+            _levelController.ReturnWeaponByIndex(_indexWeapon);
+            Destroy(_selectedWeapon.gameObject);
+            _selectedWeapon.GetComponent<Weapon>().RemoveFloor();
+            _selectedWeapon = null;
+            Destroy(_arrow.gameObject);
+        }
+    }
+
     private void LinkShootButtonToSelectedWeapon()
     {
         _shootButton.onClick.AddListener(() => _selectedWeapon.GetComponent<Weapon>().Execute());
@@ -80,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
     private void SelectWeapon()
     {
-        if (isShooting) return;
+        if (isShooting || _weaponToPlace != null) return;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -90,11 +108,14 @@ public class PlayerController : MonoBehaviour
 
             if (Physics.Raycast(_ray, out _hitInfo, Mathf.Infinity, _weaponLayerMask))
             {
-                _selectedWeapon = _hitInfo.transform.gameObject;
-                print("Selected: " + _selectedWeapon.name);
-                LinkShootButtonToSelectedWeapon();
-                _shootButton.interactable = true;
-                MoveArrowToSelectedWeapon();
+                if (_hitInfo.transform.GetComponent<Weapon>().IsActive)
+                {
+                    _selectedWeapon = _hitInfo.transform.gameObject;
+                    print("Selected: " + _selectedWeapon.name);
+                    LinkShootButtonToSelectedWeapon();
+                    _shootButton.interactable = true;
+                    MoveArrowToSelectedWeapon();
+                }
             }
         }
     }
@@ -136,6 +157,7 @@ public class PlayerController : MonoBehaviour
         if (_floor.PlaceWeapon(_weaponToPlace))
         {
             _levelController.RemoveWeaponFromListByIndex(_indexWeapon);
+            _weaponToPlace.GetComponent<Weapon>().SetFloor(_floor);
             _weaponToPlace = null;
         }
     }
