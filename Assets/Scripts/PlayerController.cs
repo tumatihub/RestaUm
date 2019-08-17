@@ -61,6 +61,16 @@ public class PlayerController : MonoBehaviour
         {
             MoveWeaponToMouse();
         }
+
+        CheckShortcutToNextLevel();
+    }
+
+    private void CheckShortcutToNextLevel()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.L))
+        {
+            _levelController.NextMap();
+        }
     }
 
     public void GrabNewWeapon(int index)
