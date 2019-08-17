@@ -15,6 +15,8 @@ public class AllyScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Weapon")) { return; }
+
         var _levelController = FindObjectOfType<LevelController>();
         _levelController.Defeat();
         Die();
