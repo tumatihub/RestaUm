@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1491,7 +1491,7 @@ PrefabInstance:
     - target: {fileID: 20566879262276235, guid: 5d45a531b3cb28a4491ad30f8017a17a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 20566879262276235, guid: 5d45a531b3cb28a4491ad30f8017a17a,
         type: 3}
@@ -2624,7 +2624,7 @@ PrefabInstance:
     - target: {fileID: 20566879262276235, guid: 5d45a531b3cb28a4491ad30f8017a17a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 20566879262276235, guid: 5d45a531b3cb28a4491ad30f8017a17a,
         type: 3}
@@ -3080,7 +3080,7 @@ PrefabInstance:
     - target: {fileID: 20566879262276235, guid: ac4ee306200d06e4486fb0b37e824b7a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 20566879262276235, guid: ac4ee306200d06e4486fb0b37e824b7a,
         type: 3}
@@ -4024,17 +4024,28 @@ PrefabInstance:
     - target: {fileID: 2716700792040358913, guid: ad7dd5550cdb81f40a26198d9332eb63,
         type: 3}
       propertyPath: _listOfWeapons.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2716700792040358913, guid: ad7dd5550cdb81f40a26198d9332eb63,
         type: 3}
       propertyPath: _listOfWeapons.Array.data[0].weaponPrefab
       value: 
-      objectReference: {fileID: 2660049236472881395, guid: eafd508a702d38f4f9accde2934966d2,
+      objectReference: {fileID: 4972194337943692448, guid: 3fcd8e85caf21a54f985bc1c9fdf8eb6,
         type: 3}
     - target: {fileID: 2716700792040358913, guid: ad7dd5550cdb81f40a26198d9332eb63,
         type: 3}
       propertyPath: _listOfWeapons.Array.data[0].numOfWeapons
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716700792040358913, guid: ad7dd5550cdb81f40a26198d9332eb63,
+        type: 3}
+      propertyPath: _listOfWeapons.Array.data[1].weaponPrefab
+      value: 
+      objectReference: {fileID: 2660049236472881395, guid: c48f53d49354a534bac49629f48a983b,
+        type: 3}
+    - target: {fileID: 2716700792040358913, guid: ad7dd5550cdb81f40a26198d9332eb63,
+        type: 3}
+      propertyPath: _listOfWeapons.Array.data[1].numOfWeapons
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -35,4 +35,19 @@ public class AllyScript : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public virtual void PushBack(Vector3 impactDir)
+    {
+        RaycastHit _hitInfo;
+        if (Physics.Raycast(_tileFloor.transform.position, impactDir, out _hitInfo, Mathf.Infinity, LayerMask.GetMask("Floor")))
+        {
+            var _hitFloor = _hitInfo.transform.gameObject.GetComponent<TileFloor>();
+            if (_hitFloor.enemy == null)
+            {
+                _tileFloor.enemy = null;
+                _tileFloor = _hitInfo.transform.gameObject.GetComponent<TileFloor>();
+                transform.position = _tileFloor.transform.position;
+            }
+        }
+    }
 }

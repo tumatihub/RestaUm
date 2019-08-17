@@ -13,7 +13,7 @@ public abstract class Weapon : MonoBehaviour
     PlayerController _player;
     TileFloor _floor;
 
-    private void Start()
+    protected virtual void Start()
     {
         _shootButton = GameObject.Find("ShootButton").GetComponent<Button>(); // TODO: Remove string
         if (_shootButton == null)
@@ -51,7 +51,7 @@ public abstract class Weapon : MonoBehaviour
         _shootButton.interactable = false;
     }
 
-    public void EndTurn()
+    public virtual void EndTurn()
     {
         _player.isShooting = false;
     }
