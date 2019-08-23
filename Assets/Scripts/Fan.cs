@@ -39,4 +39,14 @@ public class Fan : Weapon
         _anim.SetBool("Rotating", false);
     }
 
+    public override void Activate()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void Deactivate()
+    {
+        throw new System.NotImplementedException();
+    }
+
 }

@@ -168,6 +168,7 @@ public class PlayerController : MonoBehaviour
         {
             _levelController.RemoveWeaponFromListByIndex(_indexWeapon);
             _weaponToPlace.GetComponent<Weapon>().SetFloor(_floor);
+            _weaponToPlace.GetComponent<Weapon>().Activate();
             _weaponToPlace = null;
         }
     }

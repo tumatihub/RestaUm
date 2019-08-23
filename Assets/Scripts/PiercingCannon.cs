@@ -16,4 +16,14 @@ public class PiercingCannon : Weapon
         _bullet.GetComponent<Rigidbody>().velocity = _spawnBulletPoint.transform.forward * _bulletSpeed;
         _bullet.GetComponent<PiercingCannonBullet>().parentWeapon = this;
     }
+
+    public override void Activate()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void Deactivate()
+    {
+        throw new System.NotImplementedException();
+    }
 }
