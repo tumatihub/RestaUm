@@ -6,6 +6,7 @@ public class Fan : Weapon
 {
     [SerializeField] Transform _windOrig;
     Animator _anim;
+    [SerializeField] ParticleSystem _windParticles;
 
     protected override void Start()
     {
@@ -17,6 +18,13 @@ public class Fan : Weapon
     {
         print("Shooting Fan");
         _anim.SetBool("Rotating", true);
+        _windParticles.Play();
+        StartCoroutine(DelayedPush());
+    }
+
+    IEnumerator DelayedPush()
+    {
+        yield return new WaitForSeconds(1f);
         RaycastHit _hitInfo;
         if (Physics.Raycast(_windOrig.transform.position, transform.forward, out _hitInfo, Mathf.Infinity))
         {
@@ -29,14 +37,22 @@ public class Fan : Weapon
                 _hitInfo.transform.GetComponent<AllyScript>().PushBack(transform.forward);
             }
         }
-
-        Invoke("EndTurn", 1f);
+        EndTurn();
     }
 
     public override void EndTurn()
     {
         base.EndTurn();
         _anim.SetBool("Rotating", false);
+    }
+
+    public override void Activate()
+    {
+        _anim.SetTrigger("Activate");
+    }
+
+    public override void Deactivate()
+    {
     }
 
 }

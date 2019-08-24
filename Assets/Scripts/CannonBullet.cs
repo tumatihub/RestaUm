@@ -13,6 +13,10 @@ public class CannonBullet : MonoBehaviour
         {
             other.gameObject.GetComponentInParent<Enemy>().TakeDamage(_bulletDamage, gameObject.transform.forward);
         }
+        var _trail = transform.Find("Trail");
+        _trail.parent = null;
+        _trail.GetComponent<ParticleSystem>().Stop();
+        Destroy(_trail.gameObject, 5f);
         Destroy(gameObject);
     }
 
