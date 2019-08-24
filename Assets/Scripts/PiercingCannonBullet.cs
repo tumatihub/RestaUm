@@ -13,6 +13,7 @@ public class PiercingCannonBullet : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Edge") || other.gameObject.CompareTag("Ally"))
         {
+            RemoveTrail();
             Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Enemy"))
