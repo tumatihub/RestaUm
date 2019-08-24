@@ -4024,7 +4024,7 @@ PrefabInstance:
     - target: {fileID: 2716700792040358913, guid: ad7dd5550cdb81f40a26198d9332eb63,
         type: 3}
       propertyPath: _listOfWeapons.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2716700792040358913, guid: ad7dd5550cdb81f40a26198d9332eb63,
         type: 3}
@@ -4046,6 +4046,17 @@ PrefabInstance:
     - target: {fileID: 2716700792040358913, guid: ad7dd5550cdb81f40a26198d9332eb63,
         type: 3}
       propertyPath: _listOfWeapons.Array.data[1].numOfWeapons
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716700792040358913, guid: ad7dd5550cdb81f40a26198d9332eb63,
+        type: 3}
+      propertyPath: _listOfWeapons.Array.data[2].weaponPrefab
+      value: 
+      objectReference: {fileID: 4972194337943692448, guid: 3fcd8e85caf21a54f985bc1c9fdf8eb6,
+        type: 3}
+    - target: {fileID: 2716700792040358913, guid: ad7dd5550cdb81f40a26198d9332eb63,
+        type: 3}
+      propertyPath: _listOfWeapons.Array.data[2].numOfWeapons
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
