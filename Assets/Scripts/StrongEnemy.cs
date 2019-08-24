@@ -6,7 +6,6 @@ using UnityEngine;
 public class StrongEnemy : Enemy
 {
     [SerializeField] Material _lowHealthMaterial;
-    MeshRenderer _mesh;
     [SerializeField] ParticleSystem _deathParticles;
     [SerializeField] ParticleSystem _helmetParticles;
     [SerializeField] Transform _deathSpawnPoint;
@@ -14,7 +13,6 @@ public class StrongEnemy : Enemy
     protected override void Start()
     {
         base.Start();
-        _mesh = transform.Find("EnemyBody").GetComponent<MeshRenderer>();
     }
 
     public override int TakeDamage(int amount, Vector3 impactDir)
