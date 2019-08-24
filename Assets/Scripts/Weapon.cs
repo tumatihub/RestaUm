@@ -9,6 +9,8 @@ public abstract class Weapon : MonoBehaviour
     protected bool _isActive = true;
     public bool IsActive { get { return _isActive; } }
 
+    public int Index;
+
     Button _shootButton;
     PlayerController _player;
     TileFloor _floor;

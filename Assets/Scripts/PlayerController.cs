@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
                 Destroy(_weaponToPlace.gameObject);
             }
             _weaponToPlace = Instantiate(_prefab);
+            _weaponToPlace.GetComponent<Weapon>().Index = index;
         }
     }
 
@@ -93,7 +94,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_selectedWeapon != null && _selectedWeapon.GetComponent<Weapon>().IsActive)
         {
-            _levelController.ReturnWeaponByIndex(_indexWeapon);
+            _levelController.ReturnWeaponByIndex(_selectedWeapon.GetComponent<Weapon>().Index);
             Destroy(_selectedWeapon.gameObject);
             _selectedWeapon.GetComponent<Weapon>().RemoveFloor();
             _selectedWeapon = null;
