@@ -22,17 +22,27 @@ public class PiercingCannonBullet : MonoBehaviour
             _enemyHitPoints = other.gameObject.GetComponentInParent<Enemy>().TakeDamage(_bulletDamage, gameObject.transform.forward);
             if (_enemyHitPoints > 0)
             {
+                RemoveTrail();
                 Destroy(gameObject);
             }
             else
             {
                 if (_piercedEnemies >= _maxPiercedEnemies)
                 {
+                    RemoveTrail();
                     Destroy(gameObject);
                 }
                 _piercedEnemies++;
             }
         }
+    }
+
+    private void RemoveTrail()
+    {
+        var _trail = transform.Find("Trail");
+        _trail.parent = null;
+        _trail.GetComponent<ParticleSystem>().Stop();
+        Destroy(_trail.gameObject, 5f);
     }
 
     private void OnDisable()
