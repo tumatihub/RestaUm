@@ -5367,21 +5367,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: mushroom (3)
       objectReference: {fileID: 0}
-    - target: {fileID: -5975033157549033438, guid: a073f434dc2a4ae4494200bcab842ccf,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.65
-      objectReference: {fileID: 0}
-    - target: {fileID: -5975033157549033438, guid: a073f434dc2a4ae4494200bcab842ccf,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -5975033157549033438, guid: a073f434dc2a4ae4494200bcab842ccf,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.46
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a073f434dc2a4ae4494200bcab842ccf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5451,6 +5436,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.64757
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: a073f434dc2a4ae4494200bcab842ccf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: a073f434dc2a4ae4494200bcab842ccf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: a073f434dc2a4ae4494200bcab842ccf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a073f434dc2a4ae4494200bcab842ccf, type: 3}
@@ -5844,6 +5844,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fog (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6960418088885112879, guid: 127eaadff7c85e449947977604f2346a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6960418088885112848, guid: 127eaadff7c85e449947977604f2346a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6210,6 +6215,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fog (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960418088885112879, guid: 127eaadff7c85e449947977604f2346a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960418088885112848, guid: 127eaadff7c85e449947977604f2346a,
         type: 3}
@@ -8908,6 +8918,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fog (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960418088885112879, guid: 127eaadff7c85e449947977604f2346a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960418088885112848, guid: 127eaadff7c85e449947977604f2346a,
         type: 3}
@@ -13152,6 +13167,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fog (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6960418088885112879, guid: 127eaadff7c85e449947977604f2346a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6960418088885112848, guid: 127eaadff7c85e449947977604f2346a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14400,6 +14420,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fog (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960418088885112879, guid: 127eaadff7c85e449947977604f2346a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960418088885112848, guid: 127eaadff7c85e449947977604f2346a,
         type: 3}
@@ -18926,6 +18951,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fog
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960418088885112879, guid: 127eaadff7c85e449947977604f2346a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6960418088885112848, guid: 127eaadff7c85e449947977604f2346a,
         type: 3}
