@@ -24,7 +24,7 @@ public class TileFloorEditor : MonoBehaviour
         int gridSize = tileFloor.GetGridSize();
         transform.position = new Vector3(
             tileFloor.GetGridPos().x * gridSize,
-            0f,
+            transform.position.y,
             tileFloor.GetGridPos().y * gridSize
         );
         gameObject.name = tileFloor.GetGridPos().x.ToString() + ", " + tileFloor.GetGridPos().y.ToString();

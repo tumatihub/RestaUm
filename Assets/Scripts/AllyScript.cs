@@ -6,6 +6,8 @@ using UnityEngine;
 public class AllyScript : MonoBehaviour
 {
     protected TileFloor _tileFloor;
+    [SerializeField] ParticleSystem _deathParticles;
+    [SerializeField] Transform _deathSpawnPoint;
 
     private void Start()
     {
@@ -35,6 +37,7 @@ public class AllyScript : MonoBehaviour
 
     private void Die()
     {
+        Instantiate(_deathParticles, _deathSpawnPoint.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
