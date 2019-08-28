@@ -189,6 +189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 556e400298c0317479a8097123b3ddc0, type: 3}
+  Description: "Empurra um quadrado de dist\xE2ncia"
+  Name: Ventilador
   Index: 0
   _windOrig: {fileID: 5739861063454419051}
   _windParticles: {fileID: 8364764013686800625}
