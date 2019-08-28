@@ -147,7 +147,7 @@ public class LevelController : MonoBehaviour
             int _index = i;
             var _weapon = _listOfWeapons[i];
             var _weaponUI = Instantiate(_weaponUIPrefab, _weaponPanel.transform);
-            _weaponUI.transform.Find("Button").transform.Find("Text").GetComponent<Text>().text = _weapon.weaponPrefab.name;
+            _weaponUI.transform.Find("Button").GetComponent<Image>().sprite = _weapon.weaponPrefab.GetComponent<Weapon>().Icon;
             _weaponUI.transform.Find("WeaponQty").GetComponent<Text>().text = _weapon.numOfWeapons.ToString();
             _weaponUI.transform.Find("Button").GetComponent<Button>().onClick.AddListener(() => _player.GrabNewWeapon(_index));
             _listOfWeapons[i].weaponUI = _weaponUI;

@@ -8,7 +8,7 @@ public abstract class Weapon : MonoBehaviour
 {
     protected bool _isActive = true;
     public bool IsActive { get { return _isActive; } }
-
+    public Sprite Icon;
     public int Index;
 
     Button _shootButton;
