@@ -31,7 +31,7 @@ public class LevelController : MonoBehaviour
 
     private void Start()
     {
-        _weaponPanel = GameObject.Find("WeaponPanel").GetComponent<VerticalLayoutGroup>();
+        _weaponPanel = GameObject.Find("WeaponPanel").GetComponent<HorizontalLayoutGroup>();
         _player = FindObjectOfType<PlayerController>();
         _mainCanvas = GameObject.Find("Canvas");
         GenerateWeaponsPanel();
