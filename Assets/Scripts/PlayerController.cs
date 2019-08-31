@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     Button _shootButton;
     public bool isShooting = false;
     Button _removeButton;
+    GameObject _descriptionPanel;
+    
 
     [SerializeField]
     GameObject _arrowPrefab;
@@ -44,6 +46,8 @@ public class PlayerController : MonoBehaviour
         if (_removeButton == null)
             Debug.LogError("Need a removeButton.");
         _removeButton.onClick.AddListener(() => RemoveSelectedWeapon());
+
+        _descriptionPanel = GameObject.Find("DescriptionPanel");
     }
 
 
@@ -87,7 +91,16 @@ public class PlayerController : MonoBehaviour
             }
             _weaponToPlace = Instantiate(_prefab);
             _weaponToPlace.GetComponent<Weapon>().Index = index;
+            UpdateDescriptionPanel(_weaponToPlace.GetComponent<Weapon>());
         }
+    }
+
+    private void UpdateDescriptionPanel(Weapon _wpn)
+    {
+        Text _name = _descriptionPanel.transform.Find("Name").GetComponent<Text>();
+        Text _description = _descriptionPanel.transform.Find("Description").GetComponent<Text>();
+        _name.text = _wpn.Name;
+        _description.text = _wpn.Description;
     }
 
     private void RemoveSelectedWeapon()
@@ -113,7 +126,6 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            print("Try to select");
             Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit _hitInfo;
 
@@ -126,6 +138,7 @@ public class PlayerController : MonoBehaviour
                     LinkShootButtonToSelectedWeapon();
                     _shootButton.interactable = true;
                     MoveArrowToSelectedWeapon();
+                    UpdateDescriptionPanel(_selectedWeapon.GetComponent<Weapon>());
                 }
             }
         }

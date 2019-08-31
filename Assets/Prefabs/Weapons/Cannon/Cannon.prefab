@@ -4894,6 +4894,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0380b961fbf210e47bcfa99f1be745d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: 299da6c521786c5458dfcf7d4a54b2b5, type: 3}
+  Description: Mata um inimigo sem armadura
+  Name: "Canh\xE3o"
+  Index: 0
   _bulletPrefab: {fileID: 3214861138858352098, guid: b2ea981eda5cb1e47bc2043004151efd,
     type: 3}
   _spawnBulletPoint: {fileID: 5077673515416937501}
