@@ -29,11 +29,14 @@ public class LevelController : MonoBehaviour
 
     IEnumerator _checkVictoryOrDefeatCoroutine;
 
+    TransitionController _transitionController;
+
     private void Start()
     {
         _weaponPanel = GameObject.Find("WeaponPanel").GetComponent<HorizontalLayoutGroup>();
         _player = FindObjectOfType<PlayerController>();
         _mainCanvas = GameObject.Find("Canvas");
+        _transitionController = GameObject.Find("TransitionController").GetComponent<TransitionController>();
         GenerateWeaponsPanel();
         _checkVictoryOrDefeatCoroutine = CheckVictoryOrDefeat();
         StartCoroutine(_checkVictoryOrDefeatCoroutine);
@@ -96,17 +99,24 @@ public class LevelController : MonoBehaviour
     public void NextMap()
     {
         var _currentMapIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(_currentMapIndex + 1);
+        StartCoroutine(LoadWithTransition(_currentMapIndex + 1));
     }
 
     public void RestartMap()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartCoroutine(LoadWithTransition(SceneManager.GetActiveScene().buildIndex));
     }
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(LoadWithTransition(0));
+    }
+
+    IEnumerator LoadWithTransition(int scene_index)
+    {
+        _transitionController.EndTransition();
+        yield return new WaitForSeconds(_transitionController.Delay);
+        SceneManager.LoadScene(scene_index);
     }
 
     public GameObject GetWeaponPrefab(int index)
