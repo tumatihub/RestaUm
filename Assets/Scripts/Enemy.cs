@@ -10,10 +10,14 @@ public abstract class Enemy : MonoBehaviour
     protected TileFloor _tileFloor;
     [SerializeField] protected int _maxHitPoints;
 
+    protected AudioSource _audioSouce;
+    [SerializeField] protected AudioClip _deathSFX;
+
     protected virtual void Start()
     {
         _hitPoints = _maxHitPoints;
         _tileFloor = GetTileFloor();
+        _audioSouce = GetComponent<AudioSource>();
         if (_tileFloor == null)
             Debug.LogError("Can´t find the tileFloor of the enemy " + name);
         else

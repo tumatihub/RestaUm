@@ -9,6 +9,7 @@ public class StrongEnemy : Enemy
     [SerializeField] ParticleSystem _deathParticles;
     [SerializeField] ParticleSystem _helmetParticles;
     [SerializeField] Transform _deathSpawnPoint;
+    [SerializeField] AudioClip _armorHitSFX;
 
     protected override void Start()
     {
@@ -30,12 +31,14 @@ public class StrongEnemy : Enemy
     private void DropHelmet()
     {
         transform.Find("EnemyHelmet").gameObject.SetActive(false);
+        _audioSouce.PlayOneShot(_armorHitSFX);
         Instantiate(_helmetParticles, _deathSpawnPoint.transform.position, Quaternion.identity);
     }
 
     public override void Die()
     {
-        Instantiate(_deathParticles, _deathSpawnPoint.transform.position, Quaternion.identity);
+        var obj = Instantiate(_deathParticles, _deathSpawnPoint.transform.position, Quaternion.identity);
+        obj.GetComponent<AudioSource>().PlayOneShot(_deathSFX);
         Destroy(gameObject);
     }
 }

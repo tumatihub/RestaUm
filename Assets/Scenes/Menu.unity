@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.233
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1779148380}
-  m_IndirectSpecularColor: {r: 0.22050282, g: 0.24775082, b: 0.28842038, a: 0.233}
+  m_IndirectSpecularColor: {r: 0.2205027, g: 0.24775061, b: 0.28842008, a: 0.233}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3035,7 +3035,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -204, y: -155}
+  m_AnchoredPosition: {x: -242.00003, y: -155}
   m_SizeDelta: {x: 164.43, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1569222851
@@ -3358,7 +3358,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -246, y: -95}
+  m_AnchoredPosition: {x: -284, y: -95}
   m_SizeDelta: {x: 164.43, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1832408523
@@ -3799,6 +3799,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &785711917799486492
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7482029771676028376, guid: d3807dbe2f14cde4e9e38ecbe1108687,
+        type: 3}
+      propertyPath: m_Name
+      value: MusicController
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738965516120239954, guid: d3807dbe2f14cde4e9e38ecbe1108687,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738965516120239954, guid: d3807dbe2f14cde4e9e38ecbe1108687,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738965516120239954, guid: d3807dbe2f14cde4e9e38ecbe1108687,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738965516120239954, guid: d3807dbe2f14cde4e9e38ecbe1108687,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738965516120239954, guid: d3807dbe2f14cde4e9e38ecbe1108687,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738965516120239954, guid: d3807dbe2f14cde4e9e38ecbe1108687,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738965516120239954, guid: d3807dbe2f14cde4e9e38ecbe1108687,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738965516120239954, guid: d3807dbe2f14cde4e9e38ecbe1108687,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738965516120239954, guid: d3807dbe2f14cde4e9e38ecbe1108687,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738965516120239954, guid: d3807dbe2f14cde4e9e38ecbe1108687,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738965516120239954, guid: d3807dbe2f14cde4e9e38ecbe1108687,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592647295107173427, guid: d3807dbe2f14cde4e9e38ecbe1108687,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.73
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d3807dbe2f14cde4e9e38ecbe1108687, type: 3}
 --- !u!1001 &4087988968075227919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3810,6 +3884,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TransitionImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409520826277544120, guid: 60c3f3ff6f4c0cc4da4d97f7fc0d7794,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8657852302632038921, guid: 60c3f3ff6f4c0cc4da4d97f7fc0d7794,
         type: 3}

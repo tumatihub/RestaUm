@@ -8,17 +8,23 @@ public class Fan : Weapon
     Animator _anim;
     [SerializeField] ParticleSystem _windParticles;
 
+    [SerializeField] AudioClip _fanPropSFX;
+    [SerializeField] AudioClip _batteryChargingSFX;
+    AudioSource _audioSource;
+
+
     protected override void Start()
     {
         base.Start();
         _anim = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public override void Shoot()
     {
-        print("Shooting Fan");
         _anim.SetBool("Rotating", true);
         _windParticles.Play();
+        _audioSource.PlayOneShot(_fanPropSFX);
         StartCoroutine(DelayedPush());
     }
 
@@ -44,11 +50,13 @@ public class Fan : Weapon
     {
         base.EndTurn();
         _anim.SetBool("Rotating", false);
+        _audioSource.Stop();
     }
 
     public override void Activate()
     {
         _anim.SetTrigger("Activate");
+        _audioSource.PlayOneShot(_batteryChargingSFX);
     }
 
     public override void Deactivate()
