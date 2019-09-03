@@ -49,6 +49,7 @@ MonoBehaviour:
   _deathParticles: {fileID: 6274749405735842100, guid: 30dc3c2b5da9f564799c9a2bd8e2ba1f,
     type: 3}
   _deathSpawnPoint: {fileID: 6483170418575676711}
+  _deathSFX: {fileID: 8300000, guid: de7b8aec9a63ea3449449ff3be297ff3, type: 3}
 --- !u!54 &5056187092942987576
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -125,10 +126,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ally
       objectReference: {fileID: 0}
-    - target: {fileID: -5975033157549033438, guid: dc788389e91aed34a85cac2c41a8cae7,
+    - target: {fileID: 2534866581884222612, guid: dc788389e91aed34a85cac2c41a8cae7,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 9.6
+      propertyPath: m_TagString
+      value: Ally
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dc788389e91aed34a85cac2c41a8cae7,
         type: 3}
@@ -185,10 +186,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2534866581884222612, guid: dc788389e91aed34a85cac2c41a8cae7,
+    - target: {fileID: -5975033157549033438, guid: dc788389e91aed34a85cac2c41a8cae7,
         type: 3}
-      propertyPath: m_TagString
-      value: Ally
+      propertyPath: m_LocalPosition.y
+      value: 9.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc788389e91aed34a85cac2c41a8cae7, type: 3}

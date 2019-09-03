@@ -13,15 +13,20 @@ public class Cannon : Weapon
     [SerializeField] ParticleSystem _smokeRight;
     [SerializeField] ParticleSystem _smokeLeft;
 
+    AudioSource _audioSource;
+    [SerializeField] AudioClip _shootSFX;
+    [SerializeField] AudioClip _batteryChargingSFX;
+
     protected override void Start()
     {
         base.Start();
         _anim = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public override void Shoot()
     {
-        print("Cannon Shooting!");
+        _audioSource.PlayOneShot(_shootSFX);
         var _bullet = Instantiate(_bulletPrefab, _spawnBulletPoint.transform.position, _spawnBulletPoint.transform.rotation);
         _bullet.GetComponent<Rigidbody>().velocity = _spawnBulletPoint.transform.forward * _bulletSpeed;
         _bullet.GetComponent<CannonBullet>().parentWeapon = this;
@@ -32,7 +37,8 @@ public class Cannon : Weapon
 
     public override void Activate()
     {
-        _anim.SetTrigger("Activate");        
+        _anim.SetTrigger("Activate");
+        _audioSource.PlayOneShot(_batteryChargingSFX);
     }
 
     public override void Deactivate()

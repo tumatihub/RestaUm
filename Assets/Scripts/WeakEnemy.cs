@@ -14,7 +14,8 @@ public class WeakEnemy : Enemy
 
     public override void Die()
     {
-        Instantiate(_deathParticles, _deathSpawnPoint.transform.position, Quaternion.identity);
+        var obj = Instantiate(_deathParticles, _deathSpawnPoint.transform.position, Quaternion.identity);
+        obj.GetComponent<AudioSource>().PlayOneShot(_deathSFX);
         Destroy(gameObject);
     }
 }
