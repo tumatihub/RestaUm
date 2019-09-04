@@ -133,15 +133,19 @@ public class PlayerController : MonoBehaviour
             {
                 if (_hitInfo.transform.GetComponent<Weapon>().IsActive)
                 {
-                    _selectedWeapon = _hitInfo.transform.gameObject;
-                    print("Selected: " + _selectedWeapon.name);
-                    LinkShootButtonToSelectedWeapon();
-                    _shootButton.interactable = true;
-                    MoveArrowToSelectedWeapon();
-                    UpdateDescriptionPanel(_selectedWeapon.GetComponent<Weapon>());
+                    ChangeSelectedWeapon(_hitInfo.transform.gameObject);
                 }
             }
         }
+    }
+
+    private void ChangeSelectedWeapon(GameObject _wpn)
+    {
+        _selectedWeapon = _wpn;
+        LinkShootButtonToSelectedWeapon();
+        _shootButton.interactable = true;
+        MoveArrowToSelectedWeapon();
+        UpdateDescriptionPanel(_selectedWeapon.GetComponent<Weapon>());
     }
 
     private void MoveArrowToSelectedWeapon()
@@ -183,6 +187,7 @@ public class PlayerController : MonoBehaviour
             _levelController.RemoveWeaponFromListByIndex(_indexWeapon);
             _weaponToPlace.GetComponent<Weapon>().SetFloor(_floor);
             _weaponToPlace.GetComponent<Weapon>().Activate();
+            ChangeSelectedWeapon(_weaponToPlace);
             _weaponToPlace = null;
         }
     }
