@@ -10,8 +10,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject _piercingCannonPrefab;
 
     GameObject _weaponToPlace;
+    public GameObject WeaponToPlace { get { return _weaponToPlace; } }
     int _indexWeapon;
     GameObject _selectedWeapon;
+    public GameObject SelectedWeapon { get { return _selectedWeapon; } }
 
     [SerializeField] LayerMask _placebleLayerMask;
     [SerializeField] LayerMask _floorLayerMask;
