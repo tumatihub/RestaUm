@@ -19,13 +19,17 @@ public abstract class Weapon : MonoBehaviour
 
     protected virtual void Start()
     {
-        _shootButton = GameObject.Find("ShootButton").GetComponent<Button>(); // TODO: Remove string
+        var _shootButtonObj = GameObject.Find("ShootButton");
+        if (_shootButtonObj != null)
+        {
+            _shootButton = GameObject.Find("ShootButton").GetComponent<Button>(); // TODO: Remove string
+        }
         if (_shootButton == null)
-            Debug.LogError("Need a ShootButton");
+            Debug.LogWarning("Need a ShootButton");
 
         _player = FindObjectOfType<PlayerController>();
         if (_player == null)
-            Debug.LogError("Couldn´t find the playerController!");
+            Debug.LogWarning("Couldn´t find the playerController!");
     }
 
     public void SetFloor(TileFloor floor)
