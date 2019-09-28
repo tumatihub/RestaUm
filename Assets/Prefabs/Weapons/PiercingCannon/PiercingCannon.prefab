@@ -4875,8 +4875,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: be81dfdd5c75c734fbdd9034c540bfb1, type: 3}
-  Description: "Mata at\xE9 3 inimigos sem armadura"
-  Name: "Canh\xE3o Perfurante"
+  Description: Kill up to 3 unarmed enemies
+  Name: Piercing Cannon
   Index: 0
   _bulletPrefab: {fileID: 3214861138858352098, guid: 8745041c50a15c242bb7e198dda01e7f,
     type: 3}

@@ -274,7 +274,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 4435067861631442606}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -381,7 +381,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Derrota
+  m_Text: Defeat
 --- !u!1001 &6041812193977871727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -568,7 +568,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetGraphic
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4857580735185009371}
     - target: {fileID: 6506374764747726002, guid: a31308af0e62dcd42997cdd35f138717,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -636,6 +636,11 @@ PrefabInstance:
       propertyPath: m_FontData.m_MaxSize
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 8496112220806719132, guid: a31308af0e62dcd42997cdd35f138717,
+        type: 3}
+      propertyPath: m_Text
+      value: Restart
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a31308af0e62dcd42997cdd35f138717, type: 3}
 --- !u!224 &291283679856241481 stripped
@@ -644,6 +649,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6041812193977871727}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4857580735185009371 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1202817191311251380, guid: a31308af0e62dcd42997cdd35f138717,
+    type: 3}
+  m_PrefabInstance: {fileID: 6041812193977871727}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2133231938143902297 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5639095009991554870, guid: a31308af0e62dcd42997cdd35f138717,

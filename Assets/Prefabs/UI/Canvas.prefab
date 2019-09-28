@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Descri\xE7\xE3o"
+  m_Text: Description
 --- !u!1 &2254105024759356603
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +385,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Armas
+  m_Text: Weapons
 --- !u!1 &6396764986197950897
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,6 +870,11 @@ PrefabInstance:
       propertyPath: m_FontData.m_MinSize
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8854342825724467230, guid: 910352de94f2c744291ddd829192c08f,
+        type: 3}
+      propertyPath: m_Text
+      value: Shoot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 910352de94f2c744291ddd829192c08f, type: 3}
 --- !u!224 &6418078164358024514 stripped
@@ -1237,6 +1242,11 @@ PrefabInstance:
       propertyPath: m_FontData.m_MinSize
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8854342825724467230, guid: c23ad11561525b54683999a26b56ef04,
+        type: 3}
+      propertyPath: m_Text
+      value: Remove
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c23ad11561525b54683999a26b56ef04, type: 3}
 --- !u!224 &4247647129306222034 stripped
@@ -1463,6 +1473,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_MinSize
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8496112220806719132, guid: a31308af0e62dcd42997cdd35f138717,
+        type: 3}
+      propertyPath: m_Text
+      value: Restart
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a31308af0e62dcd42997cdd35f138717, type: 3}

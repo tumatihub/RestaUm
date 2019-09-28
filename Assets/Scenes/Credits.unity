@@ -821,7 +821,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Feito por tumati
+  m_Text: 'Created by tumati
 
     https://tumati.itch.io/'
 --- !u!222 &1147880137
@@ -1144,7 +1144,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Esse \xE9 o fim da demonstra\xE7\xE3o.\n\n\nObrigado por jogar!"
+  m_Text: 'This is the end of the Dog Solitaire''s demo.
+
+
+
+    Thanks for playing!'
 --- !u!222 &1666196991
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1361,7 +1365,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "M\xFAsica:"
+  m_Text: 'Music:'
 --- !u!222 &1977669185
 CanvasRenderer:
   m_ObjectHideFlags: 0
